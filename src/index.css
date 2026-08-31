@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+/* =====================================================
+   W3BB Shop theme — warm terracotta + sun-bleached sand,
+   with a turquoise accent (nods to Southwestern dream
+   catchers and tie-dye without leaning cartoonish)
+   ===================================================== */
+
+:root {
+  --radius: 0.75rem;
+
+  --brand-rust-500: #c2622d;
+  --brand-rust-600: #a8501f;
+  --brand-turquoise-400: #2dd4bf;
+  --brand-turquoise-500: #14b8a6;
+  --gradient-primary: linear-gradient(135deg, #c2622d 0%, #e0a458 50%, #2dd4bf 100%);
+
+  --background: #fdfaf5;
+  --foreground: #2b1d13;
+  --card: #ffffff;
+  --card-foreground: #2b1d13;
+  --popover: #ffffff;
+  --popover-foreground: #2b1d13;
+  --primary: var(--brand-rust-600);
+  --primary-foreground: #ffffff;
+  --secondary: #fef3e2;
+  --secondary-foreground: #7c3d10;
+  --muted: #f5ece0;
+  --muted-foreground: #7a6a58;
+  --accent: #ecfdf9;
+  --accent-foreground: #0f5f57;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #e9dcc9;
+  --input: #e9dcc9;
+  --ring: var(--brand-rust-500);
+  --success: #16a34a;
+  --warning: #d97706;
+}
+
+.dark {
+  --background: #1c1410;
+  --foreground: #f8f1e7;
+  --card: #241a14;
+  --card-foreground: #f8f1e7;
+  --popover: #241a14;
+  --popover-foreground: #f8f1e7;
+  --primary: #e0a458;
+  --primary-foreground: #241a14;
+  --secondary: #3a2a1c;
+  --secondary-foreground: #f3d9b6;
+  --muted: #33261b;
+  --muted-foreground: #c2ac95;
+  --accent: #133330;
+  --accent-foreground: #5eead4;
+  --destructive: #ef4444;
+  --destructive-foreground: #f8f1e7;
+  --border: #3f2f21;
+  --input: #3f2f21;
+  --ring: var(--brand-turquoise-400);
+  --success: #22c55e;
+  --warning: #f59e0b;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Brand wordmark */
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
