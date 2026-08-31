@@ -10,10 +10,14 @@ export function ProductCard({ product }: { product: Product }) {
 
   return (
     <Link to={`/products/${product.slug}`}>
-      <Card className="h-full overflow-hidden transition-shadow hover:shadow-md">
+      <Card className="h-full overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_-8px_rgba(120,60,20,0.28)]">
         <div className="aspect-square bg-muted">
           {product.images[0] ? (
-            <img src={product.images[0]} alt={product.name} className="size-full object-cover" />
+            <img
+              src={product.images[0]}
+              alt={product.name}
+              className="size-full object-cover transition-transform duration-500 hover:scale-105"
+            />
           ) : (
             <div className="flex size-full items-center justify-center text-muted-foreground">
               <Package className="size-8" />

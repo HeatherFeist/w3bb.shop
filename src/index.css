@@ -1,3 +1,8 @@
+/* Fraunces: a warm, slightly organic serif for headings — reads as
+   handcrafted rather than corporate. Nunito: a soft, rounded sans for
+   body text, friendly without being childish. Must precede the Tailwind
+   import — CSS requires all @import rules to come first. */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Nunito:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
@@ -9,7 +14,9 @@
    ===================================================== */
 
 :root {
-  --radius: 0.75rem;
+  --radius: 1.1rem;
+  --font-sans: "Nunito", system-ui, sans-serif;
+  --font-heading: "Fraunces", Georgia, serif;
 
   --brand-rust-500: #c2622d;
   --brand-rust-600: #a8501f;
@@ -64,6 +71,14 @@
   --warning: #f59e0b;
 }
 
+.dark body {
+  background:
+    radial-gradient(circle at 12% -10%, #3a2a1c 0%, transparent 45%),
+    radial-gradient(circle at 90% 110%, #133330 0%, transparent 42%),
+    var(--background);
+  background-attachment: fixed;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -98,12 +113,25 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    font-family: var(--font-sans);
+    /* A soft, barely-there warm glow top-left and a cool turquoise hint
+       bottom-right — gives the page a little depth and warmth instead of
+       a single flat color, without reading as "busy" or textured. */
+    background:
+      radial-gradient(circle at 12% -10%, #fbead0 0%, transparent 45%),
+      radial-gradient(circle at 90% 110%, #d9f0ea 0%, transparent 42%),
+      var(--background);
+    background-attachment: fixed;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
   }
 }
 
 /* Brand wordmark */
 .gradient-text {
+  font-family: var(--font-heading);
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   background-clip: text;
