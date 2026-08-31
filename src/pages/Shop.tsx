@@ -19,11 +19,26 @@ export default function Shop() {
 
   return (
     <div className="space-y-6">
-      <div className="space-y-2 text-center">
-        <h1 className="text-3xl font-semibold">Handmade, with heart</h1>
-        <p className="mx-auto max-w-xl text-muted-foreground">
-          Dream catchers, tie-dye, and DIY kits — each one made by hand.
-        </p>
+      {/* Full-bleed hero: breaks out of the layout's centered max-width so
+          the video spans the whole viewport, even though this page's
+          content is otherwise constrained. */}
+      <div className="relative left-1/2 right-1/2 -mx-[50vw] -mt-6 h-[380px] w-screen overflow-hidden sm:-mt-8 sm:h-[480px]">
+        <video
+          className="absolute inset-0 size-full object-cover"
+          src="/hero-video.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+        {/* Dims the video so the white text stays readable over any frame. */}
+        <div className="absolute inset-0 bg-black/45" />
+        <div className="relative flex h-full flex-col items-center justify-center gap-2 px-4 text-center text-white">
+          <h1 className="text-3xl font-semibold drop-shadow-sm sm:text-4xl">Handmade, with heart</h1>
+          <p className="max-w-xl text-white/90">
+            Dream catchers, tie-dye, and DIY kits — each one made by hand.
+          </p>
+        </div>
       </div>
 
       <div className="flex flex-wrap items-center justify-center gap-2">
