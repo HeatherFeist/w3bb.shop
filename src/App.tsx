@@ -7,6 +7,7 @@ import { StoreLayout } from "@/components/layout/StoreLayout";
 import { AdminLayout } from "@/components/layout/AdminLayout";
 import { RequireAdmin } from "@/components/layout/RequireAdmin";
 import Shop from "@/pages/Shop";
+import About from "@/pages/About";
 import ProductDetail from "@/pages/ProductDetail";
 import Cart from "@/pages/Cart";
 import CheckoutSuccess from "@/pages/CheckoutSuccess";
@@ -26,6 +27,7 @@ function App() {
             <Routes>
               <Route element={<StoreLayout />}>
                 <Route path="/" element={<Shop />} />
+                <Route path="/about" element={<About />} />
                 <Route path="/products/:slug" element={<ProductDetail />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/checkout/success" element={<CheckoutSuccess />} />

@@ -23,6 +23,9 @@ export function StoreLayout() {
                 {PRODUCT_CATEGORY_LABELS[cat]}
               </Link>
             ))}
+            <Link to="/about" className="text-muted-foreground hover:text-foreground">
+              Our Story
+            </Link>
           </nav>
           <Button variant="outline" size="icon" className="relative" asChild>
             <Link to="/cart" title="Cart">
@@ -45,6 +48,9 @@ export function StoreLayout() {
 
       <footer className="border-t bg-secondary/40 py-6 text-center text-sm text-muted-foreground">
         <p>Handmade dream catchers, tie-dye, and DIY kits — made by hand, shipped with love.</p>
+        <Link to="/about" className="mt-1 inline-block underline-offset-2 hover:underline sm:hidden">
+          Our Story
+        </Link>
         <p className="mt-1">&copy; {new Date().getFullYear()} W3BB Shop</p>
       </footer>
     </div>
