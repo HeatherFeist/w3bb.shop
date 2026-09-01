@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 // Plays through this list in order, one clip after another, then loops
 // back to the first — add more clips here any time to grow the reel.
-const HERO_CLIPS = ["/hero-video.mp4", "/hero-video-2.mp4"];
+const HERO_CLIPS = ["/hero-video.mp4", "/hero-video-2.mp4", "/hero-video-3.mp4", "/hero-video-4.mp4"];
 
 function HeroVideoPlaylist() {
   const videoRef = useRef<HTMLVideoElement>(null);
