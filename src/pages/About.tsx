@@ -1,7 +1,40 @@
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Heart, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+
+// Plays through this list in order, one clip after another, then loops
+// back to the first — add more clips here any time to grow the reel.
+const HERO_CLIPS = ["/hero-video.mp4", "/hero-video-2.mp4"];
+
+function HeroVideoPlaylist() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [clipIndex, setClipIndex] = useState(0);
+
+  useEffect(() => {
+    videoRef.current?.play().catch(() => {
+      // Autoplay can be blocked before any user interaction on some
+      // browsers — the poster/paused frame just stays visible, harmless.
+    });
+  }, [clipIndex]);
+
+  function handleEnded() {
+    setClipIndex((i) => (i + 1) % HERO_CLIPS.length);
+  }
+
+  return (
+    <video
+      ref={videoRef}
+      className="absolute inset-0 size-full object-cover"
+      src={HERO_CLIPS[clipIndex]}
+      autoPlay
+      muted
+      playsInline
+      onEnded={handleEnded}
+    />
+  );
+}
 
 export default function About() {
   return (
@@ -10,14 +43,7 @@ export default function About() {
           the video spans the whole viewport, even though the rest of this
           page's content stays comfortably narrow to read. */}
       <div className="relative left-1/2 right-1/2 -mx-[50vw] -mt-6 h-[80svh] min-h-[560px] w-screen overflow-hidden sm:-mt-8">
-        <video
-          className="absolute inset-0 size-full object-cover"
-          src="/hero-video.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
+        <HeroVideoPlaylist />
         {/* Dims the video so the white text stays readable over any frame. */}
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative flex h-full flex-col items-center justify-center gap-4 px-4 text-center text-white">
