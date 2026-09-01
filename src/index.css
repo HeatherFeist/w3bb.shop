@@ -24,24 +24,24 @@
   --brand-turquoise-500: #14b8a6;
   --gradient-primary: linear-gradient(135deg, #c2622d 0%, #e0a458 50%, #2dd4bf 100%);
 
-  --background: #f2ede4;
+  --background: #e6d8bf;
   --foreground: #2b1d13;
-  --card: #f8f4ec;
+  --card: #efe2c9;
   --card-foreground: #2b1d13;
-  --popover: #f8f4ec;
+  --popover: #efe2c9;
   --popover-foreground: #2b1d13;
   --primary: var(--brand-rust-600);
   --primary-foreground: #ffffff;
-  --secondary: #ebe1d0;
-  --secondary-foreground: #7c3d10;
-  --muted: #e6ddcd;
-  --muted-foreground: #77685a;
-  --accent: #e2ece9;
+  --secondary: #ddc9a5;
+  --secondary-foreground: #6b3f10;
+  --muted: #dac89f;
+  --muted-foreground: #6c5842;
+  --accent: #dcece7;
   --accent-foreground: #0f5f57;
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
-  --border: #ddd0ba;
-  --input: #ddd0ba;
+  --border: #c7b184;
+  --input: #c7b184;
   --ring: var(--brand-rust-500);
   --success: #16a34a;
   --warning: #d97706;
@@ -119,8 +119,8 @@
        bottom-right — gives the page a little depth and warmth instead of
        a single flat color, without reading as "busy" or textured. */
     background:
-      radial-gradient(circle at 12% -10%, #fbead0 0%, transparent 45%),
-      radial-gradient(circle at 90% 110%, #d9f0ea 0%, transparent 42%),
+      radial-gradient(circle at 12% -10%, #f0dcb5 0%, transparent 45%),
+      radial-gradient(circle at 90% 110%, #cbe4dc 0%, transparent 42%),
       var(--background);
     background-attachment: fixed;
   }
