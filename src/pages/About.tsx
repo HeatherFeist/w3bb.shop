@@ -9,7 +9,7 @@ export default function About() {
       {/* Full-bleed hero: breaks out of the layout's centered max-width so
           the video spans the whole viewport, even though the rest of this
           page's content stays comfortably narrow to read. */}
-      <div className="relative left-1/2 right-1/2 -mx-[50vw] -mt-6 h-[420px] w-screen overflow-hidden sm:-mt-8 sm:h-[520px]">
+      <div className="relative left-1/2 right-1/2 -mx-[50vw] -mt-6 h-[80svh] min-h-[560px] w-screen overflow-hidden sm:-mt-8">
         <video
           className="absolute inset-0 size-full object-cover"
           src="/hero-video.mp4"
@@ -19,7 +19,7 @@ export default function About() {
           playsInline
         />
         {/* Dims the video so the white text stays readable over any frame. */}
-        <div className="absolute inset-0 bg-black/45" />
+        <div className="absolute inset-0 bg-black/60" />
         <div className="relative flex h-full flex-col items-center justify-center gap-4 px-4 text-center text-white">
           <h1 className="text-3xl font-semibold drop-shadow-sm sm:text-4xl">Handmade, with heart</h1>
           <p className="max-w-xl text-white/90">
