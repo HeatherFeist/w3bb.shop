@@ -58,7 +58,7 @@ export default function ProductDetail() {
 
       <div className="space-y-4">
         <div>
-          <Link to={`/?category=${product.category}`} className="text-sm text-muted-foreground hover:underline">
+          <Link to={`/shop?category=${product.category}`} className="text-sm text-muted-foreground hover:underline">
             {PRODUCT_CATEGORY_LABELS[product.category]}
           </Link>
           <h1 className="text-2xl font-semibold">{product.name}</h1>

@@ -29,7 +29,7 @@ export default function CheckoutSuccess() {
         once it ships.
       </p>
       <Button asChild>
-        <Link to="/">Keep shopping</Link>
+        <Link to="/shop">Keep shopping</Link>
       </Button>
     </div>
   );

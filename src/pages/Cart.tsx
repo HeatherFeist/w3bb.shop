@@ -53,7 +53,7 @@ export default function Cart() {
         <ShoppingBag className="mx-auto size-8 text-muted-foreground" />
         <p className="text-muted-foreground">Your cart is empty.</p>
         <Button asChild>
-          <Link to="/">Keep shopping</Link>
+          <Link to="/shop">Keep shopping</Link>
         </Button>
       </div>
     );

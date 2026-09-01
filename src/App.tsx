@@ -26,8 +26,8 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route element={<StoreLayout />}>
-                <Route path="/" element={<Shop />} />
-                <Route path="/about" element={<About />} />
+                <Route path="/" element={<About />} />
+                <Route path="/shop" element={<Shop />} />
                 <Route path="/products/:slug" element={<ProductDetail />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/checkout/success" element={<CheckoutSuccess />} />
